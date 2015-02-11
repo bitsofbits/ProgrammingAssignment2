@@ -12,7 +12,7 @@
 ## cacheMatrix and then returned. If cacheSolve is invoked with `debug=TRUE`,
 ## it will emit a message when retrieving cached data. 
 ##
-## Debug makes several, perhaps dubious, assumptions. Among them:
+## cacheSolve makes at least two, perhaps dubious, assumptions. Among them:
 ## * matrix is invertble
 ## * any optional arguments are the same between the calls
 ##
@@ -45,7 +45,11 @@
 ##      [,1] [,2]
 ## [1,]   -5  4.5
 ## [2,]    4 -3.5
-
+## 
+## > cm$get() %*% cacheSolve(cm) 
+##      [,1] [,2]
+## [1,]    1    0
+## [2,]    0    1
 
 
 ## Make special psuedo matrix that can hold both the original matrix and a cached inverse.
